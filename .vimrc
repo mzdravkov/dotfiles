@@ -1,10 +1,12 @@
+execute pathogen#infect()
 set nocompatible
 set mouse=a
 set nu
-set smartindent
+"set smartindent
 set tabstop=2
 set shiftwidth=2
-set autoindent
+"set autoindent
+set hlsearch " higlight matches
 "Settings for various plugins (which opens new subwindows)
 "autocmd VimEnter * ConqueTermSplit bash
 "autocmd VimEnter * resize 9
@@ -33,6 +35,11 @@ endfunction
 	" Run :FixWhitespace to remove end of line white space.
 command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
 
-filetype plugin on
+filetype plugin indent on
 autocmd BufNewFile,BufRead *.rb setlocal filetype=ruby
 autocmd BufNewFile,BufRead *.erb setlocal filetype=erb
+
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
