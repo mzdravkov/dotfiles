@@ -33,34 +33,6 @@ endfunction
 	" Run :FixWhitespace to remove end of line white space.
 command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
 
-" Abbreviations
-
-func Eatchar(pat) " used to remove the space after expanding
-	let c = nr2char(getchar(0))
-	return (c =~ a:pat) ? '' : c
-endfunc
-
-" Ruby
-	" expands dend to do end block
-	:iab dend do
-	\<CR>
-	\<CR>end<UP>
-
-	" expands dpend to do parametar end block
-	:iab dpend do \|\|
-	\<CR>end<UP><END><LEFT><C-R>=Eatchar('\s')<CR>
-
-	" expands if. to if with end
-	:iab if. if
-	\<CR>end<ESC>hhi<bs><UP><END>
-
-	" expands class. to class with end
-	:iab class. class
-	\<CR>end<UP><END>
-
-" Rails
-	" expands erb. to <%  %>
-	:iab erb. <% %><LEFT><LEFT><LEFT>
-
-	" expands erbs. to <%=  %>
-	:iab erbs. <%= %><LEFT><LEFT><LEFT>
+filetype plugin on
+autocmd BufNewFile,BufRead *.rb setlocal filetype=ruby
+autocmd BufNewFile,BufRead *.erb setlocal filetype=erb
