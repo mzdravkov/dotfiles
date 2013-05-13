@@ -37,7 +37,7 @@ command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
 
 filetype plugin indent on
 autocmd BufNewFile,BufRead *.rb setlocal filetype=ruby
-autocmd BufNewFile,BufRead *.erb setlocal filetype=erb
+autocmd BufNewFile,BufRead *.erb source ~/.vim/ftplugin/erb.vim
 
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
