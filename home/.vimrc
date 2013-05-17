@@ -7,6 +7,7 @@ set tabstop=2
 set shiftwidth=2
 "set autoindent
 set hlsearch " higlight matches
+"set clipboard=unnamed
 "Settings for various plugins (which opens new subwindows)
 
 "colorscheme molokai
