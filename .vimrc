@@ -8,8 +8,9 @@ set shiftwidth=2
 "set autoindent
 set hlsearch " higlight matches
 "Settings for various plugins (which opens new subwindows)
-"autocmd VimEnter * ConqueTermSplit bash
-"autocmd VimEnter * resize 9
+
+colorscheme molokai
+
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd VimEnter * execute "normal \<C-w>k"
@@ -43,3 +44,4 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
