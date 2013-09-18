@@ -10,7 +10,7 @@ set hlsearch " higlight matches
 "set clipboard=unnamed
 "Settings for various plugins (which opens new subwindows)
 
-colorscheme molokai
+"colorscheme molokai
 "let g:molokai_original=0
 
 autocmd VimEnter * NERDTree
@@ -19,22 +19,6 @@ autocmd VimEnter * execute "normal \<C-w>k"
 "Setting for vimClojure
 let vimclojure#HighlightBuiltins = 1 " Highlight Clojure's builtins
 let vimclojure#ParenRainbow = 1 	 " Rainbow parentheses
-"set clipboard=unnamed
-"Settings for various plugins (which opens new subwindows)
-
-"colorscheme molokai
-"let g:molokai_original=0
-
-"autocmd VimEnter * NERDTree
-"autocmd VimEnter * wincmd p
-"autocmd VimEnter * execute "normal \<C-w>k"
-"Setting for vimClojure
-"let vimclojure#HighlightBuiltins = 1 " Highlight Clojure's builtins
-"let vimclojure#ParenRainbow = 1 	 " Rainbow parentheses
-au VimEnter * RainbowParenthesesActivate
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
 
 highlight ExtraWhitespace ctermbg=darkred guibg=#382424
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
@@ -62,15 +46,3 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
-inoremap (      ()<Left>
-inoremap [      []<Left>
-
-ca WQ wq
-ca Wq wq
-ca W w
-ca Q q
-ca bg set keymap=bulgarian
