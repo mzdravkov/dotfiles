@@ -1,29 +1,27 @@
 execute pathogen#infect()
+syntax on
 set nocompatible
 set mouse=a
 set nu
-"set smartindent
+set smartindent
 set tabstop=2
 set shiftwidth=2
 "set autoindent
 set hlsearch " higlight matches
+set incsearch
+set showmatch
+set relativenumber
+set undofile
+set gdefault
 "set clipboard=unnamed
 "Settings for various plugins (which opens new subwindows)
 
-colorscheme molokai
-"let g:molokai_original=0
-
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
-autocmd VimEnter * execute "normal \<C-w>k"
-"Setting for vimClojure
-let vimclojure#HighlightBuiltins = 1 " Highlight Clojure's builtins
-let vimclojure#ParenRainbow = 1 	 " Rainbow parentheses
-"set clipboard=unnamed
-"Settings for various plugins (which opens new subwindows)
-
+set background=dark
+colo solarized
 "colorscheme molokai
-"let g:molokai_original=0
+"let g:molokai_original=0 "Setting for vimClojure let vimclojure#HighlightBuiltins = 1 " Highlight Clojure's builtins let vimclojure#ParenRainbow = 1 	 " Rainbow parentheses
+"set clipboard=unnamed
+"Settings for various plugins (which opens new subwindows)
 
 "autocmd VimEnter * NERDTree
 "autocmd VimEnter * wincmd p
