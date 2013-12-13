@@ -1,5 +1,11 @@
 execute pathogen#infect()
+filetype plugin indent on
+filetype plugin on
 syntax on
+set omnifunc=syntaxcomplete#Complete
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
+set expandtab
 set nocompatible
 set mouse=a
 set nu
@@ -18,17 +24,6 @@ set gdefault
 
 set background=dark
 colo solarized
-"colorscheme molokai
-"let g:molokai_original=0 "Setting for vimClojure let vimclojure#HighlightBuiltins = 1 " Highlight Clojure's builtins let vimclojure#ParenRainbow = 1 	 " Rainbow parentheses
-"set clipboard=unnamed
-"Settings for various plugins (which opens new subwindows)
-
-"autocmd VimEnter * NERDTree
-"autocmd VimEnter * wincmd p
-"autocmd VimEnter * execute "normal \<C-w>k"
-"Setting for vimClojure
-"let vimclojure#HighlightBuiltins = 1 " Highlight Clojure's builtins
-"let vimclojure#ParenRainbow = 1 	 " Rainbow parentheses
 au VimEnter * RainbowParenthesesActivate
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
@@ -52,7 +47,7 @@ endfunction
 	" Run :FixWhitespace to remove end of line white space.
 command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
 
-filetype plugin indent on
+autocmd BufNewFile,BufRead *.go setlocal ts=4 shiftwidth=4
 autocmd BufNewFile,BufRead *.rb setlocal filetype=ruby
 autocmd BufNewFile,BufRead *.erb source ~/.vim/ftplugin/erb.vim
 
@@ -65,7 +60,9 @@ inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
 inoremap {}     {}
 inoremap (      ()<Left>
+inoremap ((      (
 inoremap [      []<Left>
+inoremap [[ 		[
 
 ca WQ wq
 ca Wq wq
