@@ -23,7 +23,7 @@ set gdefault
 "Settings for various plugins (which opens new subwindows)
 
 set background=dark
-colo solarized
+colo gummybears
 au VimEnter * RainbowParenthesesActivate
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
