@@ -22,8 +22,9 @@ set gdefault
 "set clipboard=unnamed
 "Settings for various plugins (which opens new subwindows)
 
-set background=dark
-colo gummybears
+"set background=dark
+colo gruvbox
+set background=light
 au VimEnter * RainbowParenthesesActivate
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
