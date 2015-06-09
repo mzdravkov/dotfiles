@@ -4,6 +4,7 @@ filetype plugin on
 syntax on
 set omnifunc=syntaxcomplete#Complete
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
+set shellcmdflag=-ic
 
 set expandtab
 set nocompatible
