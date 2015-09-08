@@ -5,24 +5,30 @@
 " compiler/go.vim: Vim compiler file for Go.
 
 if exists("current_compiler")
-    finish
+  finish
 endif
 let current_compiler = "go"
 
 if exists(":CompilerSet") != 2
-    command -nargs=* CompilerSet setlocal <args>
+  command -nargs=* CompilerSet setlocal <args>
 endif
 
 let s:save_cpo = &cpo
 set cpo-=C
+if filereadable("makefile") || filereadable("Makefile")
+    CompilerSet makeprg=make
+else
+    CompilerSet makeprg=go\ build
+endif
 
-CompilerSet makeprg=go\ build
 CompilerSet errorformat=
-        \%-G#\ %.%#,
-        \%A%f:%l:%c:\ %m,
-        \%A%f:%l:\ %m,
-        \%C%*\\s%m,
-        \%-G%.%#
+      \%-G#\ %.%#,
+      \%-G%.%#panic:\ %m,
+      \%Ecan\'t\ load\ package:\ %m,
+      \%A%f:%l:%c:\ %m,
+      \%A%f:%l:\ %m,
+      \%C%*\\s%m,
+      \%-G%.%#
 
 let &cpo = s:save_cpo
 unlet s:save_cpo

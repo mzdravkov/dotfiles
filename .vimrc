@@ -3,8 +3,18 @@ filetype plugin indent on
 filetype plugin on
 syntax on
 set omnifunc=syntaxcomplete#Complete
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
+" autocmd FileType go autocmd BufWritePre <buffer> Fmt
 set shellcmdflag=-ic
+
+" use :w!! instead of the :w !sudo tee % hack
+cmap w!! w !sudo tee > /dev/null %
+
+"set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+let $GOPATH = "~/programming/Go"
+let mapleader = " "
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
 set expandtab
 set nocompatible
