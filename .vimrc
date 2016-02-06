@@ -9,12 +9,15 @@ set shellcmdflag=-ic
 " use :w!! instead of the :w !sudo tee % hack
 cmap w!! w !sudo tee > /dev/null %
 
+
 "set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 let $GOPATH = "~/programming/Go"
 let mapleader = " "
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+" use goimports instead of gofmt on save
+let g:go_fmt_command = "goimports"
 
 set expandtab
 set nocompatible
