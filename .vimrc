@@ -4,7 +4,7 @@ filetype plugin on
 syntax on
 set omnifunc=syntaxcomplete#Complete
 " autocmd FileType go autocmd BufWritePre <buffer> Fmt
-set shellcmdflag=-ic
+" set shellcmdflag=-ic
 
 " use :w!! instead of the :w !sudo tee % hack
 cmap w!! w !sudo tee > /dev/null %
@@ -18,6 +18,13 @@ au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 " use goimports instead of gofmt on save
 let g:go_fmt_command = "goimports"
+
+" for vim-racer
+set hidden
+let g:racer_cmd = "~/.cargo/bin/racer"
+let $RUST_SRC_PATH="~/Downloads/rust/src/"
+
+au FileType rust au BufWrite * :Autoformat
 
 set expandtab
 set nocompatible

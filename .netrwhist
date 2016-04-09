@@ -1,9 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/me/.vim/bundle/vim-go/plugin'
-let g:netrw_dirhist_2='/home/me'
-let g:netrw_dirhist_3='/home/me/.vim'
-let g:netrw_dirhist_4='/home/me/.vim/bundle'
-let g:netrw_dirhist_5='/home/me/.vim/bundle/vim-go'
-let g:netrw_dirhist_6='/home/me/.vim/bundle/vim-go/autoload'
-let g:netrw_dirhist_7='/home/me/.vim/bundle/vim-go/autoload/go'
+let g:netrw_dirhist_cnt =0

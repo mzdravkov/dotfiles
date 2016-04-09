@@ -4,3 +4,9 @@
 [submodule "bundle/vim-sexp"]
 	path = bundle/vim-sexp
 	url = git://github.com/guns/vim-sexp.git
+[submodule "bundle/rust.vim"]
+	path = bundle/rust.vim
+	url = https://github.com/wting/rust.vim.git
+[submodule "bundle/vim-autoformat"]
+	path = bundle/vim-autoformat
+	url = https://github.com/Chiel92/vim-autoformat
