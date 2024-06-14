@@ -1,21 +1,25 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-Plug 'tpope/vim-sensible'
+Plug 'AndrewRadev/deleft.vim'
+Plug 'AndrewRadev/dsf.vim'
+Plug 'AndrewRadev/sideways.vim'
+Plug 'chrisbra/csv.vim', {'for': 'csv'}
+Plug 'https://github.com/AndrewRadev/splitjoin.vim'
 Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'phaazon/hop.nvim'
-Plug 'https://github.com/AndrewRadev/splitjoin.vim'
-Plug 'vimwiki/vimwiki'
-Plug 'puremourning/vimspector'
-Plug 'chrisbra/csv.vim', {'for': 'csv'}
-Plug 'AndrewRadev/sideways.vim'
-Plug 'AndrewRadev/deleft.vim'
-Plug 'AndrewRadev/dsf.vim'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'puremourning/vimspector'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+Plug 'vimwiki/vimwiki'
+Plug 'Yggdroot/indentLine'
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+
 
 call plug#end()
 
@@ -109,3 +113,7 @@ let g:clipboard = {
 "     set clipboard=unnamed
 "   endif
 " endif
+
+
+
+let g:vimspector_enable_mappings='HUMAN'
