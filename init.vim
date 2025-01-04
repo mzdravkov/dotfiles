@@ -18,6 +18,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
 Plug 'Yggdroot/indentLine'
+Plug 'wellle/targets.vim'
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 
 
