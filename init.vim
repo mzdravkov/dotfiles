@@ -20,6 +20,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'Yggdroot/indentLine'
 Plug 'wellle/targets.vim'
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+Plug 'neovim/nvim-lspconfig'
+Plug 'dense-analysis/ale'
 
 
 call plug#end()
@@ -77,9 +79,13 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap H :SidewaysLeft<cr>
 nnoremap L :SidewaysRight<cr>
 
-
 " Setup a hotkey for using Hop to move to anywhere in the file
 nnoremap <leader>h <cmd>HopAnywhere<cr>
+
+" Use ALE commands
+nnoremap gd :ALEGoToDefinition<cr>
+nnoremap K :ALEHover<cr>
+nnoremap <leader>R :ALEFindReferences<cr>
 
 
 " Trailing Whitespace fighter
@@ -92,15 +98,27 @@ endfunction
 " Run :FixWhitespace to remove end of line white space.
 command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
 
+" let g:clipboard = {
+"             \   'name': 'WslClipboard',
+"             \   'copy': {
+"             \      '+': 'win32yank.exe -i --crlf',
+"             \      '*': 'win32yank.exe -i --crlf',
+"             \    },
+"             \   'paste': {
+"             \      '+': 'win32yank.exe -o --lf',
+"             \      '*': 'win32yank.exe -o --lf',
+"             \   },
+"             \   'cache_enabled': 0,
+"             \ }
 let g:clipboard = {
-            \   'name': 'WslClipboard',
+            \   'name': 'xclip',
             \   'copy': {
-            \      '+': 'win32yank.exe -i --crlf',
-            \      '*': 'win32yank.exe -i --crlf',
+            \      '+': 'xclip -sel clip',
+            \      '*': 'xclip -sel clip',
             \    },
             \   'paste': {
-            \      '+': 'win32yank.exe -o --lf',
-            \      '*': 'win32yank.exe -o --lf',
+            \      '+': 'xclip -o -sel clip',
+            \      '*': 'xclip -o -sel clip',
             \   },
             \   'cache_enabled': 0,
             \ }
